@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
-import { db } from "./firebase";
-import { collection, addDoc, onSnapshot, doc, updateDoc, serverTimestamp, query, orderBy } from "firebase/firestore";
+import { initializeApp } from "firebase/app";
+import { getFirestore, collection, addDoc, onSnapshot, doc, updateDoc, serverTimestamp, query, orderBy } from "firebase/firestore";
+const firebaseConfig = { apiKey: "AIzaSyDix_z2aZrR1270ElWlMkrWxkj_FKBDQTY", authDomain: "jv-ortopedia.firebaseapp.com", projectId: "jv-ortopedia", storageBucket: "jv-ortopedia.firebasestorage.app", messagingSenderId: "662602185527", appId: "1:662602185527:web:52c55adb755431f1d0b8b2" };
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
 const C = {
   navy: "#0D2B55", navyLight: "#1A3F73", teal: "#1A7DAF",
